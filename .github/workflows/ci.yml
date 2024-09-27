@@ -1,0 +1,33 @@
+name: Python CI
+
+# Déclenchement de la pipeline sur des pushs ou pull request sur la branche main
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+jobs:
+
+  # Nom du job à réaliser
+  tests:
+
+    # Choix de l'OS sur lequel va tourner les tests
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Clone du dépôt
+      - name: get source code
+      - uses: actions/checkout@v4.2.0
+
+      # Configuration et installation de python
+      - name: setup python in version 3.12
+      - uses: actions/setup-python@v5.2.0
+        with:
+          python-version: '3.12' 
+
+      # Lancement des tests
+      - name: start test
+      - run: python -m unittest test_addition.py
+
+      
