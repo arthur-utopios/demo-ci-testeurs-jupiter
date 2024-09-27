@@ -18,16 +18,16 @@ jobs:
 
       # Clone du dépôt
       - name: get source code
-      - uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.0
 
       # Configuration et installation de python
       - name: setup python in version 3.12
-      - uses: actions/setup-python@v5.2.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: '3.12' 
 
       # Lancement des tests
       - name: start test
-      - run: python -m unittest test_addition.py
+        run: python -m unittest test_addition.py
 
       
