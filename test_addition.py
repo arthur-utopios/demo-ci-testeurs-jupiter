@@ -14,7 +14,7 @@ class TestAddition(unittest.TestCase):
         self.assertEqual(add(1.2, 5.3), 6.5)
     
     def test_add_negative_numbers(self):
-        self.assertEqual(add(-1, -3), -3)
+        self.assertEqual(add(-1, -2), -3)
 
 if __name__ == '__main__':
     unittest.main()
